@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background-color: hsl(0, 0%, 10%);
+}
+article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: hsl(0, 0%, 19%);
+    transition: transform 400ms ease;
+
+
+}
+article:nth-child(2) {
+    background-color: hsl(0, 41%, 32%);
+}
+article:nth-child(3) {
+    background-color: hsl(150, 41%, 32%);
+}
+article:nth-child(4) {
+    background-color: hsl(200, 41%, 32%);
+}
+article[data-status="transition-inactive"] {
+    transform: translateX(-100%) scale(0.7);
+    z-index: 4;
+}
+article[data-status="inactive"] {
+    transform: translateX(-100%) scale(0.7);
+    z-index: 3;
+}
+article[data-status="transition-active"] {
+    transition: none;
+    z-index: 2;
+}
+article[data-status="active"] {
+    z-index: 3;
+}
